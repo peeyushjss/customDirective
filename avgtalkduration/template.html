@@ -1,0 +1,21 @@
+<div id="avgtalktime">
+    <p style="font-size: 1.8rem;">
+        <a style="color: darkgrey;" class="fa fa-bug" title="Debug" ng-click="ATD.debug()" ng-if="showDebugicon"></a>
+        <a data-toggle="modal" data-target="#avgtalkdurationX" ng-click="ATD.showSetting();">
+            <i style="color: darkgrey;" class="fa fa-cog" title="Settings"></i>
+        </a>{{ATD.widgetName}}</p>
+    <div class="content">
+        <div class="cf-svmc-sparkline">
+            <div class="cf-svmc">
+                <div class="change metric">
+                    <div ng-style="(divWidth > 600) && (divheight < 600) && (divheight > 400) && {'font-size': '24.375rem', 'margin-top':'125px'} ||
+                                (divWidth > 600) && (divheight > 250) && (divheight < 400) && {'font-size': '24.375rem'} ||
+                 divWidth < 600 && {'font-size': '11.375rem', 'margin-top':'65px'}">{{ATD.avgTalkduration| format}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<duallistbox class="duallistboxFont" boxname="boxName" data="popupSetting" threshholdsettings="threshholdSetting" timesettings="WidgetTimeSettings" template-url="layout"></duallistbox>
+<debug boxname="boxName" template-url="layout"></debug>
